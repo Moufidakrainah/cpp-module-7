@@ -1,9 +1,9 @@
 #ifndef ITER_HPP
 #define ITER_HPP
 
-#include <cstddef> // pour size_t
+#include <cstddef> /* pour size_t */
 
-// Template de fonction iter
+/* Template de fonction iter */
 template <typename T, typename Func>
 void iter(T* array, const size_t length, Func f)
 {

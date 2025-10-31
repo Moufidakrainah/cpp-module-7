@@ -3,15 +3,15 @@
 
 #include <stdexcept>
 
-// Constructeur vide
+/* Constructeur vide pour la classe Array<T> */
 template <typename T>
 Array<T>::Array() : _data(NULL), _size(0) {}
 
-// Constructeur avec taille
+/* Constructeur avec taille */
 template <typename T>
 Array<T>::Array(unsigned int n) : _data(new T[n]()), _size(n) {}
 
-// Constructeur par copie (copie profonde)
+/* Constructeur par copie (copie profonde)*/
 template <typename T>
 Array<T>::Array(const Array<T>& other) : _data(NULL), _size(0)
 {
@@ -24,14 +24,14 @@ Array<T>::Array(const Array<T>& other) : _data(NULL), _size(0)
     }
 }
 
-// Destructeur
+/* Destructeur */
 template <typename T>
 Array<T>::~Array()
 {
     delete[] _data;
 }
 
-// Opérateur d'affectation
+/* surcharge de l'opérateur d'affectation */
 template <typename T>
 Array<T>& Array<T>::operator=(const Array<T>& other)
 {
@@ -53,7 +53,7 @@ Array<T>& Array<T>::operator=(const Array<T>& other)
     return *this;
 }
 
-// Accès aux éléments avec vérification des indices
+/* surcharge de l'operateur [] : Accès aux éléments avec vérification des indices */
 template <typename T>
 T& Array<T>::operator[](unsigned int index)
 {
@@ -62,6 +62,7 @@ T& Array<T>::operator[](unsigned int index)
     return _data[index];
 }
 
+/* surcharge de l'operateur [] const */
 template <typename T>
 const T& Array<T>::operator[](unsigned int index) const
 {
@@ -70,7 +71,7 @@ const T& Array<T>::operator[](unsigned int index) const
     return _data[index];
 }
 
-// Taille du tableau
+/*  retourne la taille du tableau */
 template <typename T>
 unsigned int Array<T>::size() const
 {
